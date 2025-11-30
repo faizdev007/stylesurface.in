@@ -90,7 +90,7 @@ export interface GlobalSettings {
   address: string;
   logoUrl?: string;
   whatsapp: string;
-  integrations?: CRMIntegrations;
+  integrations?: any;
 }
 
 export interface Lead {
