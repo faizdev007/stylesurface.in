@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Button from "./ui/Button";
 import { CMS } from "@/utils/cms";
-import { MenuItem, GlobalSettings } from "../types";
+import { MenuItem, GlobalSettings } from "../../types";
 
 interface NavbarProps {
   onOpenModal: () => void;

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
-import { Testimonial } from '../types';
+import { Testimonial } from '../../types';
 
 const defaultTestimonials: Testimonial[] = [
   {

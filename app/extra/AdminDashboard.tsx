@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Button from '../components/ui/Button';
 import { Save, LogOut, Code, Layout, FileText, Copy, Trash2, Plus, Globe, Settings, Image as ImageIcon, Menu as MenuIcon, MapPin, Box, X, Check, Upload, Table, ChevronDown, ChevronUp, Users, RefreshCw, Zap, Database, Edit3, MessageCircle } from 'lucide-react';
 import { CMS } from '@/utils/cms';
-import { CMSPage, MenuStructure, Product, MediaItem, Lead, GlobalSettings, PageSection } from '../types';
+import { CMSPage, MenuStructure, Product, MediaItem, Lead, GlobalSettings, PageSection } from '../../types';
 import { syncLeadToCRM } from '@/utils/crm';
 import { useRouter } from 'next/router';
 

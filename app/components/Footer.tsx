@@ -14,7 +14,7 @@ import {
 import Link from "next/link";
 import Button from "./ui/Button";
 import { CMS } from "@/utils/cms";
-import { GlobalSettings, MenuItem } from "../types";
+import { GlobalSettings, MenuItem } from "@/types";
 
 interface FooterProps {
   onOpenModal: () => void;

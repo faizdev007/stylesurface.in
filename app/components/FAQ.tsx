@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import { FAQItem } from '../types';
+import { FAQItem } from '@/types';
 
 const defaultFaqs: FAQItem[] = [
   {

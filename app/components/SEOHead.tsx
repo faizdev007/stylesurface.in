@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { SEOData } from '../types';
+import { SEOData } from '../../types';
 
 interface SEOHeadProps {
   seo: SEOData;
