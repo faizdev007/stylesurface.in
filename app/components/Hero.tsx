@@ -132,7 +132,7 @@ const Hero: React.FC<HeroProps> = ({ content: propContent }) => {
         </div>
       </div>
     </section>
-    <Modal
+      <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         title="Get Your Bulk Quote"
