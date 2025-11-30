@@ -17,9 +17,9 @@ const Home: React.FC<HomeProps> = ({ onOpenModal }) => {
   
   return (
     <>
-      <Hero onOpenModal={onOpenModal} />
+      <Hero/>
       <TrustSection />
-      <ProductSection onOpenModal={onOpenModal} />
+      <ProductSection />
       <AboutSection />
       <SocialProof />
       <Applications />

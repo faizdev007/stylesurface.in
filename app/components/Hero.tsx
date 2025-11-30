@@ -1,17 +1,20 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import { CheckCircle, ShieldCheck, Truck, Award, Star } from 'lucide-react';
 import Button from './ui/Button';
 import LeadForm from './ui/LeadForm';
 import { useContent } from '@/utils/content';
+import Modal from './ui/Modal';
+import CatalogForm from './ui/CatalogForm';
 
 interface HeroProps {
-  onOpenModal: () => void;
   content?: any;
 }
 
-const Hero: React.FC<HeroProps> = ({ onOpenModal, content: propContent }) => {
+const Hero: React.FC<HeroProps> = ({ content: propContent }) => {
   const { content: defaultContent } = useContent();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCatalogModalOpen, setIsCatalogModalOpen] = useState(false);
   
   // Use propContent if available (from CMS), otherwise fall back to defaultContent (hardcoded/legacy)
   const title = propContent?.title || defaultContent.home.heroTitle;
@@ -21,6 +24,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal, content: propContent }) => {
   const bgImage = propContent?.bgImage;
 
   return (
+    <>
     <section id="home" className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-industrial-light overflow-hidden">
       {/* Background Elements */}
       {bgImage ? (
@@ -69,10 +73,10 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal, content: propContent }) => {
             </ul>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-2">
-              <Button size="lg" variant="accent" onClick={onOpenModal} className="w-full sm:w-auto">
+              <Button size="lg" variant="accent" onClick={setIsModalOpen.bind(this, true)} className="w-full sm:w-auto">
                 {btnPrimary}
               </Button>
-              <Button size="lg" variant="outline" onClick={onOpenModal} className="w-full sm:w-auto bg-white">
+              <Button size="lg" variant="outline" onClick={setIsCatalogModalOpen.bind(this, true)} className="w-full sm:w-auto bg-white">
                 {btnSecondary}
               </Button>
             </div>
@@ -128,6 +132,22 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal, content: propContent }) => {
         </div>
       </div>
     </section>
+    <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get Your Bulk Quote"
+      >
+        <LeadForm onSuccess={() => setIsModalOpen(false)} />
+      </Modal>
+
+      <Modal
+        isOpen={isCatalogModalOpen}
+        onClose={() => setIsCatalogModalOpen(false)}
+        title="Get Your Catalog"
+      >
+        <CatalogForm onSuccess={() => setIsCatalogModalOpen(false)} />
+      </Modal>
+    </>
   );
 };
 
