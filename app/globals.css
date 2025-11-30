@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* ✅ THIS IS YOUR REAL TAILWIND THEME NOW */
+@theme {
+  /* ---------- Fonts ---------- */
+  --font-sans: Inter, sans-serif;
+
+  /* ---------- Brand Colors ---------- */
+  --color-brand-50:  #fdf7f2;
+  --color-brand-100: #faeddc;
+  --color-brand-200: #f3d6b0;
+  --color-brand-300: #ebbe84;
+  --color-brand-400: #d7a161;
+  --color-brand-500: #bf8b4d;
+  --color-brand-600: #a8773f;
+  --color-brand-700: #8a6034;
+  --color-brand-800: #6e4c2a;
+  --color-brand-900: #553a20;
+  --color-brand-950: #2f1f11;
+
+  /* ---------- Accent Colors ---------- */
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #f59e0b;
+  --color-accent-600: #d97706;
+  --color-accent-700: #b45309;
+
+  /* ---------- Industrial Colors ---------- */
+  --color-industrial-light: #f8fafc;
+  --color-industrial-gray:  #64748b;
+  --color-industrial-dark:  #0f172a;
+
+  /* ---------- Animations ---------- */
+  --animate-fade-in-up: fadeInUp 0.5s ease-out;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+/* ---------- Keyframes (still normal CSS) ---------- */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ---------- Dark Mode Vars ---------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+button{
+  cursor: pointer;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.glass-dark {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+}
