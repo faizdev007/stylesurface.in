@@ -151,7 +151,7 @@ const CatalogForm: React.FC<CatalogFormProps> = ({ className = '', onSuccess }) 
             <Loader2 className="w-5 h-5 animate-spin" /> Processing...
           </span>
         ) : (
-          "Contact Us Now"
+          "Get Catalog"
         )}
       </Button>
     </form>

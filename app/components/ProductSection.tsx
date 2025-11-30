@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Star, Table } from 'lucide-react';
 import Button from './ui/Button';
-import { Product } from '../../types';
+import { Product } from '@/types';
 import { useContent } from '@/utils/content';
 import { CMS } from '@/utils/cms';
 

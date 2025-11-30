@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Hero from '../components/Hero';
 import ProductSection from '../components/ProductSection';
 import TrustSection from '../components/TrustSection';
@@ -11,13 +11,13 @@ import ContactSection from '../components/ContactSection';
 
 interface HomeProps {
   onOpenModal: () => void;
-  onCatalogModal: ()=> void;
 }
 
-const Home: React.FC<HomeProps> = ({ onOpenModal,onCatalogModal }) => {
+const Home: React.FC<HomeProps> = ({ onOpenModal }) => {
+  
   return (
     <>
-      <Hero onOpenModal={onOpenModal} onCatalogModal={onCatalogModal} />
+      <Hero onOpenModal={onOpenModal} />
       <TrustSection />
       <ProductSection onOpenModal={onOpenModal} />
       <AboutSection />

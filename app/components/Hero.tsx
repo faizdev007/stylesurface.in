@@ -7,11 +7,10 @@ import { useContent } from '@/utils/content';
 
 interface HeroProps {
   onOpenModal: () => void;
-  onCatalogModal: () => void;
   content?: any;
 }
 
-const Hero: React.FC<HeroProps> = ({ onOpenModal,onCatalogModal, content: propContent }) => {
+const Hero: React.FC<HeroProps> = ({ onOpenModal, content: propContent }) => {
   const { content: defaultContent } = useContent();
   
   // Use propContent if available (from CMS), otherwise fall back to defaultContent (hardcoded/legacy)
@@ -73,7 +72,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal,onCatalogModal, content: propCo
               <Button size="lg" variant="accent" onClick={onOpenModal} className="w-full sm:w-auto">
                 {btnPrimary}
               </Button>
-              <Button size="lg" variant="outline" onClick={onCatalogModal} className="w-full sm:w-auto bg-white">
+              <Button size="lg" variant="outline" onClick={onOpenModal} className="w-full sm:w-auto bg-white">
                 {btnSecondary}
               </Button>
             </div>
