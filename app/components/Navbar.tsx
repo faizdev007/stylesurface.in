@@ -72,46 +72,48 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
-            {menuItems.map((link) => (
-              <Link
-                key={link.id}
-                href={link.url}
-                target={link.target}
-                className={`font-medium text-sm transition-colors relative group ${
-                  isActive(link.url)
-                    ? "text-yellow-500 font-bold"
-                    : "text-white hover:text-yellow-500"
-                }`}
-              >
-                {link.label}
-                <span
-                  className={`absolute -bottom-1 left-0 h-0.5 bg-yellow-500 transition-all ${
+          <div className="flex items-center gap-8">
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center gap-8">
+              {menuItems.map((link) => (
+                <Link
+                  key={link.id}
+                  href={link.url}
+                  target={link.target}
+                  className={`font-medium text-sm transition-colors relative group ${
                     isActive(link.url)
-                      ? "w-full"
-                      : "w-0 group-hover:w-full"
+                      ? "text-yellow-500 font-bold"
+                      : "text-white hover:text-yellow-500"
                   }`}
-                ></span>
-              </Link>
-            ))}
-          </div>
+                >
+                  {link.label}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-0.5 bg-yellow-500 transition-all ${
+                      isActive(link.url)
+                        ? "w-full"
+                        : "w-0 group-hover:w-full"
+                    }`}
+                  ></span>
+                </Link>
+              ))}
+            </div>
 
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-5">
-            <a
-              href={`tel:${settings?.phone}`}
-              className="flex items-center gap-2 text-white hover:text-yellow-600 font-bold transition-colors"
-            >
-              <div className="text-yellow-50 p-2 rounded-full">
-                <Phone className="w-4 h-4 text-yellow-600" />
-              </div>
-              <span>{settings?.phone}</span>
-            </a>
+            {/* CTA Buttons */}
+            <div className="hidden lg:flex items-center gap-5">
+              <a
+                href={`tel:${settings?.phone}`}
+                className="flex items-center gap-2 text-white hover:text-yellow-600 font-bold transition-colors"
+              >
+                <div className="text-yellow-50 p-2 rounded-full">
+                  <Phone className="w-4 h-4 text-yellow-600" />
+                </div>
+                <span>{settings?.phone}</span>
+              </a>
 
-            <Button variant="accent" size="md" onClick={onOpenModal}>
-              Get Bulk Quote
-            </Button>
+              <Button variant="accent" size="md" onClick={onOpenModal}>
+                Get Bulk Quote
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Toggle */}
