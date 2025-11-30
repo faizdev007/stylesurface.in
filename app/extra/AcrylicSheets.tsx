@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../components/ui/Button';
 import { CheckCircle, ArrowRight, Layers, Sun, PenTool, Thermometer, Info } from 'lucide-react';
 import ContactSection from '../components/ContactSection';
-import { useContent } from '../utils/content';
+import { useContent } from '@/utils/content';
 
 interface PageProps {
   onOpenModal: () => void;

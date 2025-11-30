@@ -40,11 +40,11 @@ const TrustSection: React.FC<TrustSectionProps> = ({ content }) => {
              
              return (
                 <div key={idx} className="group flex flex-col items-center text-center p-6 rounded-2xl bg-yellow-600/80 border border-brand-700/50 hover:bg-yellow-800/80 hover:border-brand-600 transition-all duration-300 hover:-translate-y-1">
-                <div className="bg-brand-950 p-4 rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300 shadow-inner border border-brand-800">
-                    <IconComponent className="w-8 h-8 text-accent-400" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">{feature.title}</h3>
-                <p className="text-brand-200 text-sm leading-snug">{feature.desc}</p>
+                  <div className="bg-brand-950 p-4 rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300 shadow-inner border border-brand-800">
+                      <IconComponent className="w-8 h-8 text-accent-400" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2">{feature.title}</h3>
+                  <p className="text-brand-200 text-sm leading-snug">{feature.desc}</p>
                 </div>
              );
           })}

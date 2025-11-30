@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../components/ui/Button';
 import { CheckCircle, ArrowRight, Leaf, Volume2, Zap, Box } from 'lucide-react';
 import ContactSection from '../components/ContactSection';
-import { useContent } from '../utils/content';
+import { useContent } from '@/utils/content';
 
 interface PageProps {
   onOpenModal: () => void;
@@ -110,7 +110,7 @@ const CorkSheets: React.FC<PageProps> = ({ onOpenModal }) => {
                       </tr>
                       <tr>
                          <td className="py-3 text-gray-500">Recovery</td>
-                         <td className="py-3 font-semibold text-right">> 80%</td>
+                         <td className="py-3 font-semibold text-right"> 80%</td>
                       </tr>
                       <tr>
                          <td className="py-3 text-gray-500">Thermal Conductivity</td>

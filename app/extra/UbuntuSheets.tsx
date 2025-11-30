@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../components/ui/Button';
 import { CheckCircle, ArrowRight, XCircle, Shield, Droplets, Hammer } from 'lucide-react';
 import ContactSection from '../components/ContactSection';
-import { useContent } from '../utils/content';
+import { useContent } from '@/utils/content';
 
 interface PageProps {
   onOpenModal: () => void;
@@ -101,7 +101,7 @@ const UbuntuSheets: React.FC<PageProps> = ({ onOpenModal }) => {
                 </tr>
                 <tr>
                   <td className="p-5 font-bold text-industrial-dark">Screw Holding</td>
-                  <td className="p-5 bg-brand-50 font-bold text-brand-700">Excellent (>1800 N)</td>
+                  <td className="p-5 bg-brand-50 font-bold text-brand-700">Excellent (1800 N)</td>
                   <td className="p-5 text-gray-600">Excellent</td>
                   <td className="p-5 text-gray-600">Poor</td>
                 </tr>
