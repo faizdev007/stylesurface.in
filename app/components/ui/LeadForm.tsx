@@ -32,11 +32,6 @@ const LeadForm: React.FC<LeadFormProps> = ({ className = '', onSuccess }) => {
     setIsSubmitting(true);
     
     try {
-        // await fetch("/api/send-email", {
-        //   method: "POST",
-        //   headers: { "Content-Type": "application/json" },
-        //   body: JSON.stringify(formState),
-        // });
         
        // 1. Save to Supabase (Primary Database)
         const { data, error } = await supabase.from('leads').insert({
@@ -53,6 +48,11 @@ const LeadForm: React.FC<LeadFormProps> = ({ className = '', onSuccess }) => {
         // 2. Push to CRM (Zoho/HubSpot via Zapier Webhook)
         // We don't await this to block the UI, but we trigger it.
         if (data) {
+            await fetch("/api/send-mail", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(formState),
+            });
             syncLeadToCRM(data);
         }
         
